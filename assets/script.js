@@ -1,4 +1,5 @@
 //create high score page
+// score = sec
 //form for adding name
 //buttons for 
     //reset (take to start page (unhide span))
@@ -8,28 +9,7 @@
     //highscore list
 
 
-//TIMER
-//need to add click event to start
-//change alert to bring up high score page
-//event to hide all other pages and bring up high score form
-    //pulls the score and the local storage
-//onclick event to store name to local storage
-
-
-
-let sec = 15;
-let time = setInterval(myTimer, 1000);
-let countDown = document.getElementById('timer');
-function myTimer() {
-   countDown.innerHTML = "Time: " + sec + "sec left";
-   sec--;
-   if (sec == -1) {
-       clearInterval(time);
-       alert("No time left!");
-   }
-}
-
-
+//Quiz global variables
 let startButton = document.querySelector('#start-btn');
 let nextButton = document.querySelector('#next-btn');
 let startQuiz = document.querySelector('.start-quiz');
@@ -78,6 +58,8 @@ function startGame() {
     currentQuestionIndex = 0;
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
+    timer();
+
 }
 
 //set the next question
@@ -153,4 +135,28 @@ function clearStatusClass(element) {
 function incrementIndex() {
     currentQuestionIndex++;
     setNextQuestion();
+}
+
+
+//TIMER
+
+//add to  clear interval to go to high score page
+//event to hide all other pages and bring up high score form
+    //pulls the score and the local storage
+
+//Timer global variables
+let countDown = document.getElementById('timer');
+let timingBox = document.querySelector('.timingBox');
+
+
+function timer(){
+    timingBox.classList.remove('hide');
+    var sec = 75;
+    var timer = setInterval(function(){
+        countDown.innerHTML = "Time: " + sec + "sec left";
+        sec--;
+        if (sec < 0) {
+            clearInterval(timer);
+        }
+    }, 1000);
 }
