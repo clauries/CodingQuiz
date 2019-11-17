@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+  
+    <!--Bootstrap 4.3.1-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+
+    <!--JS file-->
+    <script defer src="./assets/script.js"></script>
+
+    <title>Coding Quiz</title>
+</head>
+<body>
+
+    <div class="container timingBox">
+        <span id="timer" class="col-12"></span>
+    </div>
+
+    <div class="container">
+        <div id="question-container" class="hide">
+          <div id="question">Question</div>
+          <div id="answer-buttons" class="btn-grid">
+            <button class="btn" id="btn1">Answer 1</button>
+            <button class="btn" id="btn2">Answer 2</button>
+            <button class="btn" id="btn3">Answer 3</button>
+            <button class="btn" id="btn4">Answer 4</button>
+          </div>
+        </div>
+        <div class="controls">
+            <span class="start-quiz">
+            <h1 class="start-heading">Coding Review Quiz</h1>
+            <p class="start-instructions">You've almost made it to the finish line. Look at all you've learned in the past 6 months. The question is: do you still remember the basics?</p>
+            <p class="start-instructions">Test your knowledge and see if you can answer the questions correctly in the shortest amount of time.</p>
+            <p class="start-instructions">Compete with yourself to beat your top score.</p>
+            <button id="start-btn" class="start-btn btn">Start</button>
+            <button id="high-btn" class="start-btn btn">High Scores</button>
+        </span>
+            <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+      </div>
+
+
+
+
+    <!--Bootstrap JS 4.3.1-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
