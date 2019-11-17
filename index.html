@@ -13,37 +13,56 @@
 
     <!--JS file-->
     <script defer src="./assets/script.js"></script>
+    <script defer src="./assets/questions.js"></script>
 
     <title>Coding Quiz</title>
 </head>
 <body>
 
-    <div class="container timingBox hide">
-        <span id="timer" class="col-12"></span>
+    <div class="container timingBox">
+        <span id="timer" class="col-12">Time: 0 sec</span>
     </div>
 
     <div class="container">
-        <div id="question-container" class="hide">
-          <div id="question">Question</div>
-          <div id="answer-buttons" class="btn-grid">
-            <button class="btn" id="btn1">Answer 1</button>
-            <button class="btn" id="btn2">Answer 2</button>
-            <button class="btn" id="btn3">Answer 3</button>
-            <button class="btn" id="btn4">Answer 4</button>
-          </div>
-        </div>
-        <div class="controls">
-            <span class="start-quiz">
-            <h1 class="start-heading">Coding Review Quiz</h1>
-            <p class="start-instructions">You've almost made it to the finish line. Look at all you've learned in the past 6 months. The question is: do you still remember the basics?</p>
-            <p class="start-instructions">Test your knowledge and see if you can answer the questions correctly in the shortest amount of time.</p>
-            <p class="start-instructions">Compete with yourself to beat your top score.</p>
-            <button id="start-btn" class="start-btn btn">Start</button>
-            <button id="high-btn" class="start-btn btn">High Scores</button>
-        </span>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
+      <div id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn" id="btn1">Answer 1</button>
+          <button class="btn" id="btn2">Answer 2</button>
+          <button class="btn" id="btn3">Answer 3</button>
+          <button class="btn" id="btn4">Answer 4</button>
         </div>
       </div>
+      <div class="controls">
+          <span class="start-quiz">
+          <h1 class="start-heading">Coding Review Quiz</h1>
+          <p class="start-instructions">You've almost made it to the finish line. Look at all you've learned in the past 6 months. The question is: do you still remember the basics?</p>
+          <p class="start-instructions">Test your knowledge and see if you can answer the questions correctly in the shortest amount of time.</p>
+          <p class="start-instructions">Compete with yourself to beat your top score.</p>
+          <button id="start-btn" class="start-btn btn">Start</button>
+          <button id="high-btn" class="high-btn btn">High Scores</button>
+      </span>
+          <button id="next-btn" class="next-btn btn hide">Next</button>
+      </div>
+
+      <div class="end-screen hide">
+        <h1 class="end-heading"></h1>
+        <form class="user-add-name">
+          <label for="user-name-input">Enter a username or initials</label>
+          <input type="text" class="form-control end-user-name" id="endUserAdd" placeholder="Type name or initials">
+          <button type="submit" class="btn btn-primary save-btn">Save</button>
+          <button id="end-high-btn" class="high-btn btn">See High Scores</button>
+          <button id="start-screen-btn" class="start-screen-btn btn">Go to Start</button>
+        </form>  
+      </div>
+      <div class="high-scores hide">
+        <h1 class="high-heading">High Scores</h1>
+        <button id="high-start-screen-btn" class="start-screen-btn btn">Go to Start</button>
+
+
+      </div>
+    </div>
+
 
 
 

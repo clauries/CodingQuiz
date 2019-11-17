@@ -15,3 +15,9 @@ As a bootcamp student, I wanted to create a program to help me practice for futu
     Youtube video: https://youtu.be/CGd7dlBAlac
     Github: https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript
 
+* Found an extremely helpful post by Mikhail on Stack Overflow that helped me fix an issue with my timer. 
+    https://stackoverflow.com/questions/31559469/how-to-create-a-simple-javascript-timer
+    
+* Found some of my questions in a quiz by Meenakshi Agarwal
+    https://www.techbeamers.com/javascript-quiz-for-web-developers/
+

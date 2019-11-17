@@ -70,13 +70,21 @@ btn.wrong {
     color: black;
 }
 
-.start-btn, .next-btn {
+.start-btn, .high-btn, .next-btn, .save-btn, .start-screen-btn {
     font-size: 1.5 rem;
     font-weight: bold;
     padding: 10px 20px;
+    margin-top: 10px;
 }
 
 .controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-screen {
     display: flex;
     flex-direction: column;
     justify-content: center;

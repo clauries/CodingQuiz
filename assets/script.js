@@ -1,14 +1,3 @@
-//create high score page
-// score = sec
-//form for adding name
-//buttons for 
-    //reset (take to start page (unhide span))
-        //takes you to a high score list ordered by highest score
-    //save
-    //return to main menu
-    //highscore list
-
-
 //Quiz global variables
 let startButton = document.querySelector('#start-btn');
 let nextButton = document.querySelector('#next-btn');
@@ -18,35 +7,77 @@ let questionElement = document.querySelector('#question');
 let answerButtonsElement = document.querySelector('#answer-buttons');
 let questions = [
     {
-        question: 'What is 2 + 2?',
+        question: "Commonly used data types DO NOT include:",
         answers: [
-            {text: '4', correct: true },
-            {text: '22', correct: false }
+            {text: "strings", correct: false }, 
+            {text: "booleans", correct: false} ,
+            {text: "alerts", correct: true },
+            {text: "numbers", correct: false }
         ]
     },
     {
-        question: 'What is 2 + 2?',
+        question: "The condition in an if / else statement is enclosed within ____.",
         answers: [
-            {text: '4', correct: true },
-            {text: '6', correct: false }
+            {text: "quotes", correct: false },
+            {text: "curly brackets", correct: false },
+            {text: "parentheses", correct: true },
+            {text: "square brackets", correct: false }
         ]
     },
     {
-        question: 'What is 2 + 2?',
+        question: "Select a String function that creates a string and display in a big font as if it were in a tag?",
         answers: [
-            {text: '4', correct: true },
-            {text: '15', correct: false }
+            {text: "big()", correct: true },
+            {text: "anchor()", correct: false },
+            {text: "italics()", correct: false},
+            {text: "blink()", correct: false}
+        ]
+    },
+    {
+        question:"What is the function of Array object that runs through each element of the array?",
+        answers: [
+            {text: "forEach()", correct: true },
+            {text: "filter()", correct: false },
+            {text: "every()", correct: false },
+            {text: "concat()", correct: false }
+        ]
+    },
+    {
+        question: "What is the function of Array object that adds and/or removes elements from an array?",
+        answers: [
+            {text: "unshift()", correct: false },
+            {text: "sort()", correct: false },
+            {text: "toSource()", correct: false },
+            {text: "splice()", correct: true }
         ]
     }
-];
+    ];
 
 let shuffledQuestions;
 let currentQuestionIndex;
 
+//Start, end, and high score screen global variables
+let highScoresButton = document.querySelector('.high-btn');
+let saveButton = document.querySelector('.save-btn');
+let startScreenButton = document.querySelector('.start-screen-btn');
+let endScreen = document.querySelector('.end-screen');
+let highScores = document.querySelector('.high-scores');
+
 
 //click to start the game
 startButton.addEventListener('click', startGame);
+//click to go to next question
 nextButton.addEventListener("click", incrementIndex);
+//click to go to high scores
+highScoresButton.addEventListener('click', getHigh);
+//click to save your score to high score list
+saveButton.addEventListener('click', saveScore);
+//click to return to the start screen
+startScreenButton.addEventListener('click', startScreen)
+
+
+
+//QUIZ
 
 function startGame() {
     //hide starting page
@@ -59,7 +90,6 @@ function startGame() {
     questionContainerElement.classList.remove('hide');
     setNextQuestion();
     timer();
-
 }
 
 //set the next question
@@ -99,7 +129,8 @@ function resetState() {
 //check if correct
 //if there are more questions to ask, unhide the next question
 //if there are no more questions change start button to restart and unhide
-/*need to change the else code to go to the high scores page*/
+/*need to change the else code to go to the high scores page
+    .innerhtml of end-heading you win if timer > 0 or lose if <0*/
 function selectAnswer(e) {
     let selectedButton = e.target;
     let correct = selectedButton.dataset.correct;
@@ -110,8 +141,8 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide');
     } else {
-        startButton.innerText = 'Restart';
-        startButton.classList.remove('hide');
+        questionContainerElement.classList.add('hide');
+        endScreen.classList.remove('hide');
     }
 }
 
@@ -150,13 +181,51 @@ let timingBox = document.querySelector('.timingBox');
 
 
 function timer(){
-    timingBox.classList.remove('hide');
     var sec = 75;
     var timer = setInterval(function(){
-        countDown.innerHTML = "Time: " + sec + "sec left";
+        countDown.innerHTML = "Time: " + sec + "sec";
         sec--;
         if (sec < 0) {
             clearInterval(timer);
+            questionContainerElement.classList.add('hide');
+            endScreen.classList.remove('hide');
         }
     }, 1000);
+}
+
+//END SCREEN
+
+// score = sec
+//buttons for 
+    //reset (take to start page (unhide span))
+        //takes you to a high score list ordered by highest score
+    //save 
+    //highscore list
+
+function saveScore() {
+    let name = document.querySelector('.end-user-name');
+    consolelog(name);
+    endScreen.classList.add('hide');
+    highScores.classList.remove('hide');
+
+}
+
+
+
+//HIGH SCORES
+
+//unhide div high-scores
+//pull high scores from local
+//display top 5 in list and ordered greatest to least
+function getHigh() {
+    highScoresButton.classList.remove('hide');
+    //hide all others?
+}
+
+
+//START SCREEN
+
+function startScreen() {
+    startQuiz.classList.remove('hide');
+    //hide all others?
 }
